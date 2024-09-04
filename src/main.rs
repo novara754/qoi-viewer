@@ -231,7 +231,7 @@ pub fn main() -> anyhow::Result<()> {
         .map_err(|e| anyhow!(e))
         .context("creating texture from surface")?;
 
-    canvas.set_draw_color(Color::RGB(0, 100, 0));
+    canvas.set_draw_color(Color::RGB(0, 0, 0));
     canvas.clear();
     canvas
         .copy(&texture, None, None)
