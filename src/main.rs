@@ -68,6 +68,7 @@ impl QoiImage {
 
         let mut prev_pixel = Pixel(0, 0, 0, 255);
         let mut seen_pixels = [Pixel(0, 0, 0, 0); 64];
+        seen_pixels[prev_pixel.hash()] = prev_pixel;
 
         while pixels.len() < num_pixel_bytes {
             let op = cursor.read_u8().context("read op")?;
